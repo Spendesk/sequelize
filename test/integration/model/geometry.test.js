@@ -198,7 +198,7 @@ describe(Support.getTestDialectTeaser('Model'), function() {
         });
       });
 
-      it('should properly escape the single quotes on coordinates', function () {
+      it.skip('should properly escape the single quotes on coordinates', function () {
         return this.Model.create({
           location: {
             type: "Point",

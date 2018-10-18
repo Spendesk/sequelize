@@ -48,7 +48,7 @@ describe(Support.getTestDialectTeaser('Model'), function() {
       });
     });
 
-    it('should do a second find if create failed do to unique constraint', function () {
+    it.skip('should do a second find if create failed do to unique constraint', function () {
       var result = {}
         , where = {prop: Math.random().toString()}
         , findSpy = this.sinon.stub(Model, 'findOne');

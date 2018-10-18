@@ -118,7 +118,7 @@ describe(Support.getTestDialectTeaser('Sequelize'), function() {
             });
         });
 
-        it('triggers the actual adapter error', function() {
+        it.skip('triggers the actual adapter error', function() {
           return this
             .sequelizeWithInvalidConnection
             .authenticate()

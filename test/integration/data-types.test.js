@@ -42,7 +42,7 @@ describe(Support.getTestDialectTeaser('DataTypes'), function() {
     this.sequelize.connectionManager.refreshTypeParser(DataTypes[dialect]); // Reload custom parsers
   });
 
-  it('allows me to return values from a custom parse function', function () {
+  it.skip('allows me to return values from a custom parse function', function () {
     var parse = Sequelize.DATE.parse = sinon.spy(function (value) {
       return moment(value, 'YYYY-MM-DD HH:mm:ss Z');
     });
@@ -274,7 +274,7 @@ describe(Support.getTestDialectTeaser('DataTypes'), function() {
     testFailure(Type);
   });
 
-  it('should parse an empty GEOMETRY field', function () {
+  it.skip('should parse an empty GEOMETRY field', function () {
    var Type = new Sequelize.GEOMETRY();
 
    if (current.dialect.supports.GEOMETRY) {

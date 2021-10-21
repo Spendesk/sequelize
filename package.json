@@ -62,6 +62,9 @@
     "uuid-validate": "^0.0.2",
     "watchr": "~2.4.11"
   },
+  "peerDependencies": {
+    "pg-hstore": "^2.3.4"
+  },
   "keywords": [
     "mysql",
     "sqlite",

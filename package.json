@@ -1,7 +1,7 @@
 {
   "name": "@dev-spendesk/sequelize",
   "description": "Multi dialect ORM for Node.JS/io.js",
-  "version": "3.30.7",
+  "version": "3.30.8",
   "author": "Sascha Depold <sascha@depold.com>",
   "contributors": [
     {
@@ -53,9 +53,9 @@
     "commander": "^2.6.0",
     "continuation-local-storage": "^3.1.4",
     "cross-env": "^2.0.1",
-    "dox": "~0.8.0",
+    "dox": "^1.0.0",
     "git": "^0.1.5",
-    "hints": "^0.2.0",
+    "hints": "^1.1.0",
     "jshint": "^2.13.6",
     "rimraf": "^2.5.4",
     "tedious": "^1.13.2",

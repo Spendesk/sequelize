@@ -1,7 +1,10 @@
 {
-  "name": "@dev-spendesk/sequelize",
+  "name": "@spendesk/sequelize",
   "description": "Multi dialect ORM for Node.JS/io.js",
-  "version": "3.30.8",
+  "version": "3.30.9",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "author": "Sascha Depold <sascha@depold.com>",
   "contributors": [
     {

@@ -1,0 +1,44 @@
+name: Publish SDK
+
+on:
+  push:
+    branches: [v3]
+    paths:
+      - 'package.json'
+      - 'index.js'
+      - 'lib/**'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  publish:
+    runs-on:
+      - runs-on=${{ github.run_id }}
+      - runner=spendesk-2-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: runs-on/action@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@spendesk'
+      - name: Install dependencies
+        run: npm install
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create GitHub Release
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if gh release view "v${VERSION}" >/dev/null 2>&1; then
+            echo "Release v${VERSION} already exists, skipping."
+          else
+            gh release create "v${VERSION}" --generate-notes --target v3
+          fi
